@@ -1,10 +1,16 @@
-<h1><%= @word%></h1>
+<h1><%= @word.get_word()%></h1>
 <h2>Definitions:</h2>
+
+<% @all_definitions.each() do |definition|  %>
+<%=    definition.get_definition() %>
+<% end %>
+<%  %>
+
 
 <h2>Add Definition:</h2>
 
 <form action="/success2" method="post">
-  <input id="word" name="word" type="hidden" value="<%= @word%>">
+  <input id="word" name="word" type="hidden" value="<%= @word.get_word()%>">
   <label for="definition">What definition would you like to add?</label>
     <input id="definition" name="definition" type="text">
 

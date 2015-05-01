@@ -20,7 +20,8 @@ post('/success') do
 end
 
 get('/word/:word') do
-  @word = Word.new(params.fetch('word')).get_word()
+  @word = Word.new(params.fetch('word'))
+  @all_definitions = @word.get_definition()
   erb(:word)
 end
 
@@ -30,9 +31,8 @@ end
 
 post('/success2') do
   @word = Word.new(params.fetch('word'))
-  definition = Definition.new(params.fetch('definition'))
-  definition.save()
-  @definition = definition.get_definition()
-  @word.add_definition(definition)
+  @definition = Definition.new(params.fetch('definition'))
+  @definition.save()
+  @word.add_definition(@definition)
   erb(:success2)
 end
