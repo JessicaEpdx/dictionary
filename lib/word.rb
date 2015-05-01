@@ -29,7 +29,7 @@ class Word
   end
 
   define_method(:add_definition) do |definition|
-    @definitions.push(definition)
+    @definitions.push(definition.get_definition())
   end
 
   define_method(:get_definitions) do

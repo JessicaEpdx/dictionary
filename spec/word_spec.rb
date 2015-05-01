@@ -55,7 +55,7 @@ describe('Word') do
     definition2 = Definition.new("seriously")
     definition2.save()
     word1.add_definition(definition2)
-    expect(word1.get_definitions()).to(eq([definition1, definition2]))
+    expect(word1.get_definitions()).to(eq(["The cutest thing ever.", "seriously"]))
   end
 end
 

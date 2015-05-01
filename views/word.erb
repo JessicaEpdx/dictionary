@@ -1,5 +1,11 @@
 <h2>Definitions for <%= @word.get_word()%></h2>
 
+<ul class="definition_list">
+  <% @all_definitions.each() do |definition| %>
+  <li><%= definition%></li>
+  <% end %>
+</ul>
+
 
 <h3>Add Definition:</h3>
 
@@ -10,3 +16,5 @@
 
   <button type="submit">Add That Definition!</button>
 </form>
+
+<a href='/'>Home</a>
