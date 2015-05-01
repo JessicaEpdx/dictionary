@@ -29,6 +29,17 @@ describe('Word') do
     end
   end
 
+  describe('#id') do
+    it("shows all words") do
+      word1 = Word.new("yummy")
+      word1.save()
+      word2 = Word.new("tummy")
+      word2.save()
+      expect(word1.id()).to(eq(1))
+      expect(word2.id()).to(eq(2))
+    end
+  end
+
   describe('#get_word') do
     it("gets string input from word object") do
       word = Word.new("deer")
