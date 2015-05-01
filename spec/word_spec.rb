@@ -52,7 +52,7 @@ describe('Word') do
     it("finds word object from name") do
       word = Word.new("box")
       word.save()
-      expect(Word.find("box")).to(eq(word))
+      expect(Word.find(word.id())).to(eq(word))
     end
   end
 

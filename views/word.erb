@@ -10,7 +10,8 @@
 <h3>Add Definition:</h3>
 
 <form action="/success2" method="post">
-  <input id="word" name="word" type="hidden" value="<%= @word.get_word()%>">
+  <input id="word_id" name="word_id" type="hidden" value="<%=@word.id().to_s%>">
+
   <label for="definition">What definition would you like to add?</label>
     <input id="definition" name="definition" type="text">
 
