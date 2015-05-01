@@ -19,3 +19,11 @@ describe('path of index', {:type=> :feature}) do
     expect(page).to have_content("deer")
   end
 end
+
+describe('path of definition', {:type=> :feature}) do
+  it("takes you to success page when you add a definition") do
+    visit('/word/:word')
+    click_button('Add That Definition!')
+    expect(page).to have_content("Great")
+  end
+end

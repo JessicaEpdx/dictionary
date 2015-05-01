@@ -20,5 +20,6 @@ post('/success') do
 end
 
 get('/word/:word') do
+  @word = Word.new(params.fetch('word')).get_word()
   erb(:word)
 end

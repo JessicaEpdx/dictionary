@@ -1,1 +1,11 @@
-<h1>Your word: <%= %></h1>
+<h1><%= @word%></h1>
+<h2>Definitions:</h2>
+
+<h2>Add Definition:</h2>
+
+<form action="/success" method="post">
+  <label for="definition">What definition would you like to add?</label>
+    <input id="definition" name="definition" type="text">
+
+  <button type="submit">Add That Definition!</button>
+</form>
