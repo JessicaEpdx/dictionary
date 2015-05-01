@@ -21,7 +21,7 @@ post('/success') do
 end
 
 get('/word/:id') do
-  @word = Word.find(params.fetch('word_id').to_i)
+  @word = Word.find(params.fetch('id'))
   erb(:word)
 end
 
