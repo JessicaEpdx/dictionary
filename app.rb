@@ -22,6 +22,7 @@ end
 
 get('/word/:id') do
   @word = Word.find(params.fetch('id'))
+  @all_definitions = @word.get_definitions()
   erb(:word)
 end
 

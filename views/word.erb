@@ -1,4 +1,8 @@
-<h1>Great you added the word <%=@word.get_word()%></h1>
+<h2>Definitions for <%=@word.get_word()%>:</h2>
+<ul><%@all_definitions.each() do |definition| %>
+<li><%= definition%></li>
+<%end %>
+</ul>
 
 <form action="/success_2" method="post">
   <input id='word_id' name='word_id' type='hidden' value='<%= @word.id().to_s() %>'>
