@@ -15,11 +15,20 @@ get('/success') do
 end
 
 post('/success') do
-  word = Word.new(params.fetch('word'))
-  word.save()
+  @word = Word.new(params.fetch('word'))
+  @word.save()
   erb(:success)
 end
 
-get('/word/:word') do
+get('/word/:id') do
+  @word = Word.find(params.fetch('word_id').to_i)
   erb(:word)
+end
+
+post('/success_2') do
+  @word = Word.find(params.fetch('word_id').to_i)
+  @definition = Definition.new(params.fetch('definition'))
+  @definition.save()
+  @word.add_definition(@definition)
+  erb(:success_2)
 end

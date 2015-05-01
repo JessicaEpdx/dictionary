@@ -4,7 +4,7 @@
 <h2>Words in your dictionary:</h2>
 <ul class="word_list">
   <% @all_words.each() do |word| %>
-  <li><a href="/word/<%=word.get_word()%>"><%=word.get_word()%></a></li>
+  <li><a href="/word/<%=word.id()%>"><%=word.get_word()%></a></li>
   <% end %>
 </ul>
 
