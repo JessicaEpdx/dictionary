@@ -17,6 +17,4 @@ class Definition
     @@definitions.push(self)
   end
 
-
-
 end

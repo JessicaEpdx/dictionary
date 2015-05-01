@@ -29,6 +29,14 @@ describe('Word') do
     end
   end
 
+  describe('#get_word') do
+    it("gets string input from word object") do
+      word = Word.new("deer")
+      word.save()
+      expect(word.get_word).to(eq("deer"))
+    end
+  end
+
   describe('#add_definition') do
     it("adds a definition to word") do
     word1 = Word.new("panda")

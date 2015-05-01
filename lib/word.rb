@@ -1,9 +1,9 @@
 class Word
-  attr_reader(:word, :defintion)
   @@words = [ ]
 
-  define_method(:initialize) do |attributes|
+  define_method(:initialize) do |word|
     @definitions = [ ]
+    @word = word
   end
 
   define_singleton_method(:clear) do
@@ -25,5 +25,10 @@ class Word
   define_method(:get_definition) do
     @definitions
   end
+
+  define_method(:get_word) do
+    @word
+  end
+
 
 end
