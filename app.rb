@@ -1,10 +1,29 @@
 require("sinatra")
 require("sinatra/reloader")
-require("./lib/car")
-require("./lib/dealership")
+require("./lib/word")
+require("./lib/definition")
 also_reload("lib/**/*.rb")
 
 get('/') do
   @all_words = Word.all()
   erb(:index)
+end
+
+get('/success') do
+  erb(:success)
+end
+
+post('/success') do
+  word = Word.new(params.fetch('word'))
+  word.save()
+  erb(:success)
+end
+
+get('/word') do
+  erb(:word)
+end
+
+get('/word/:word') do
+  @word = word
+  erb(:word)
 end
