@@ -2,16 +2,16 @@
 
 
 <h2>Words in your dictionary:</h2>
-<ul class="word_list">
+<ol class="word_list">
   <% @all_words.each() do |word| %>
   <li><a href="/word/<%=word.id()%>"><%=word.get_word()%></a></li>
   <% end %>
-</ul>
+</ol>
 
-<h2>Add a word:</h2>
+<h3>Add a word:</h3>
 <form action="/success" method="post">
   <label for="word">What word would you like to add?</label>
     <input id="word" name="word" type="text">
 
-  <button type="submit">Add That Word!</button>
+  <button type="submit">Add!</button>
 </form>

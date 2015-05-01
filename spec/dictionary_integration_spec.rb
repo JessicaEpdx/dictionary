@@ -5,25 +5,31 @@ Capybara.app = Sinatra::Application
 describe('path of index', {:type=> :feature}) do
   it("takes you to success page when you add a word") do
     visit('/')
-    click_button('Add That Word!')
-    expect(page).to have_content("Great")
+    click_button('Add!')
+    expect(page).to have_content("Great you added the word")
   end
 end
 
-describe('path of index', {:type=> :feature}) do
-  it("prints out a list of words") do
+describe('path of word list at index', {:type=> :feature}) do
+  it("prints out a list of words added at index page") do
     visit('/')
     fill_in("word", :with=> "deer")
-    click_button('Add That Word!')
+    click_button('Add!')
     visit('/')
     expect(page).to have_content("deer")
   end
 end
 
-describe('path of definition', {:type=> :feature}) do
-    it("takes you to success page when you add a definition") do
+describe('path of word', {:type=> :feature}) do
+    it("takes you to individual word page") do
     visit('/word/:id')
-    click_button('Add That Definition!')
-    expect(page).to have_content("Great")
+    expect(page).to have_content("Add your own definition")
+  end
+end
+
+describe('path of definition', {:type=> :feature}) do
+  it("runs success page after definition input") do
+    visit('/success_2')
+    expect(page).to have_content("Definition Added:")
   end
 end

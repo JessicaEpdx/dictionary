@@ -1,6 +1,6 @@
 
-<h1>Word: </h1><h2>"<%= @word.get_word %>"</h2>
-<h1>Definition Added: </h1><h2>"<%= @definition.get_definition()%>"</h2>
-
+<h2>Word: </h2><h3>"<%= @word.get_word %>"</h3>
+<h2>Definition Added: </h2><h3>"<%= @definition.get_definition()%>"</h3>
+<br>
 <a class="link" href="/">Dictionary Home</a><br>
-<a href="/word/<%=@word.id()%>">Back to <%= @word.get_word %></a>
+<a class="link" href="/word/<%=@word.id()%>">Back to <%= @word.get_word %></a>
