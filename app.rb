@@ -20,8 +20,12 @@ post('/success') do
 end
 
 get('/word/:word') do
-  @word = Word.new(params.fetch('word'))
-  @all_definitions = @word.get_definition()
+  @word = Word.find(params.fetch('word'))
+  erb(:word)
+end
+
+post('/word/:word') do
+  
   erb(:word)
 end
 

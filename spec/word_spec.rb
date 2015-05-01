@@ -37,6 +37,14 @@ describe('Word') do
     end
   end
 
+  describe('find') do
+    it("finds word object from name") do
+      word = Word.new("box")
+      word.save()
+      expect(Word.find("box")).to(eq(word))
+    end
+  end
+
   describe('#add_definition') do
     it("adds a definition to word") do
     word1 = Word.new("panda")
@@ -44,7 +52,10 @@ describe('Word') do
     definition1 = Definition.new("The cutest thing ever.")
     definition1.save()
     word1.add_definition(definition1)
-    expect(word1.get_definition()).to(eq([definition1]))
+    definition2 = Definition.new("seriously")
+    definition2.save()
+    word1.add_definition(definition2)
+    expect(word1.get_definitions()).to(eq([definition1, definition2]))
   end
 end
 

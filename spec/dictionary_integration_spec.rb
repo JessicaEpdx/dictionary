@@ -21,7 +21,7 @@ describe('path of index', {:type=> :feature}) do
 end
 
 describe('path of definition', {:type=> :feature}) do
-  it("takes you to success page when you add a definition") do
+    it("takes you to success page when you add a definition") do
     visit('/word/:word')
     click_button('Add That Definition!')
     expect(page).to have_content("Great")

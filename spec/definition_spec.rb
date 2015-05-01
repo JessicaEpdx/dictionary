@@ -30,4 +30,11 @@ describe('Definition') do
     end
   end
 
+  describe('#get_definition') do
+    it("gets input definition") do
+      definition = Definition.new("a cheesy pizza")
+      definition.save()
+      expect(definition.get_definition()).to(eq("a cheesy pizza"))
+    end
+  end
 end

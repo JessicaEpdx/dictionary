@@ -14,6 +14,16 @@ class Word
     @@words
   end
 
+  define_singleton_method(:find) do |name|
+    found_word = nil
+    @@words.each() do |word|
+      if @word = name
+        found_word = word
+      end
+    end
+    found_word
+  end
+
   define_method(:save) do
     @@words.push(self)
   end
@@ -22,7 +32,7 @@ class Word
     @definitions.push(definition)
   end
 
-  define_method(:get_definition) do
+  define_method(:get_definitions) do
     @definitions
   end
 
