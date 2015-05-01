@@ -3,15 +3,14 @@
 <li><%= definition%></li>
 <%end %>
 </ul>
-
+<br><br>
+<h3>Add your own definition:</h3>
 <form action="/success_2" method="post">
   <input id='word_id' name='word_id' type='hidden' value='<%= @word.id().to_s() %>'>
 
-  <label for='definition'>Definition</label>
   <input id='definition' name='definition' type='text'>
 
   <button type="submit">Add That Definition!</button>
 </form>
-
 
 <a href="/">Home</a>
