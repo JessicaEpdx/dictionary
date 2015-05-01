@@ -23,3 +23,16 @@ get('/word/:word') do
   @word = Word.new(params.fetch('word')).get_word()
   erb(:word)
 end
+
+get('/success2') do
+  erb(:success2)
+end
+
+post('/success2') do
+  @word = Word.new(params.fetch('word'))
+  definition = Definition.new(params.fetch('definition'))
+  definition.save()
+  @definition = definition.get_definition()
+  @word.add_definition(definition)
+  erb(:success2)
+end

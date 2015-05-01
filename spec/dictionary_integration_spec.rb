@@ -11,7 +11,7 @@ describe('path of index', {:type=> :feature}) do
 end
 
 describe('path of index', {:type=> :feature}) do
-  it("") do
+  it("prints out a list of words") do
     visit('/')
     fill_in("word", :with=> "deer")
     click_button('Add That Word!')
